@@ -9,15 +9,4 @@ import './-private/engine-instance-ext';
 
 const { Engine } = Ember;
 
-export default Engine.extend({
-  buildRegistry() {
-    let registry = this._super(...arguments);
-
-    if (!(this instanceof Ember.Application)) {
-      registry.register('component:link-to', EngineScopedLinkComponent);
-      registry.register('component:link-to-external', ExternalLinkComponent);
-    }
-
-    return registry;
-  }
-});
+export default Engine.extend();
